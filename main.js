@@ -24,6 +24,7 @@ app.post('/api/send/submissions', function (req, res) {
 	var formSub = req.body.formSub; 
 	res.send("Recieved!");	
 	console.log("Request recieved " + formSub);
+	connection.collection("decks").remove({});
 	data = JSON.parse(formSub);
 	for(var key in data){
 		if (data.hasOwnProperty(key)) {

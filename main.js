@@ -41,5 +41,13 @@ app.post('/api/send/submissions', function (req, res) {
 	}
 	
 });
+app.post('/api/delete/deck', function (req, res) {
+	var user = req.params.user; 
+	connection.collection("decks").remove({name:user});
+	res.send("Recieved!");
+	
+	
+	
+});
 
 app.listen(port);
